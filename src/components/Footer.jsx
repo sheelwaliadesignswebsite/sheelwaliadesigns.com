@@ -6,53 +6,50 @@ export default function Footer() {
 
   return (
     <footer
-      className="text-center text-gray-600 border-t border-[var(--coffee)] pt-8 pb-12 px-4 bg-gradient-to-br from-[var(--cream)] to-[var(--white)]"
+      className="text-center text-[var(--muted)] border-t border-[var(--rule)] pt-14 pb-12 px-6 bg-[var(--cream)]"
       role="contentinfo"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Name and Title */}
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">Shekhar Rao</h3>
-        <p className="text-gray-500 mb-6 text-lg tracking-wide text-center">
+        <h3 className="font-serif text-3xl text-[var(--charcoal)] mb-2">Sheelwalia Designs</h3>
+        <p className="text-[var(--muted)] mb-6 text-sm tracking-wide text-center">
           <a
-            href="mailto:shekharwork80@gmail.com"
+            href="mailto:hello@sheelwaliadesigns.com"
             className="hover:underline hover:text-peach transition-colors"
           >
-            shekharwork80@gmail.com
+            hello@sheelwaliadesigns.com
           </a>
         </p>
 
-        {/* Social Links */}
         <nav
           className="flex justify-center space-x-8 mb-6"
           aria-label="Footer social links"
         >
           <a
-            href="https://www.instagram.com/shhekharr"
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-peach transition-colors duration-300 flex items-center gap-2 group"
-            aria-label="Visit Shekhar Rao's Instagram"
+            className="text-[var(--muted)] hover:text-peach transition-colors duration-300 flex items-center gap-2 group"
+            aria-label="Visit Sheelwalia Designs on Instagram"
           >
             <BiLogoInstagram className="text-xl" aria-hidden="true" />
             <span className="text-sm group-hover:underline">Instagram</span>
           </a>
 
           <a
-            href="mailto:shekharwork80@gmail.com"
+            href="mailto:hello@sheelwaliadesigns.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-peach transition-colors duration-300 flex items-center gap-2 group"
-            aria-label="Send an email to Shekhar Rao"
+            className="text-[var(--muted)] hover:text-peach transition-colors duration-300 flex items-center gap-2 group"
+            aria-label="Send an email to Sheelwalia Designs"
           >
             <BiEnvelope className="text-xl" aria-hidden="true" />
             <span className="text-sm group-hover:underline">Email</span>
           </a>
         </nav>
 
-        {/* Bottom copyright */}
         <div className="border-t border-[var(--coffee)] pt-6">
-          <p className="text-sm text-gray-400">
-            © {year} Shekhar Rao. All rights reserved.
+          <p className="text-[11px] uppercase tracking-[0.2em] text-[#A8A398]">
+            © {year} Sheelwalia Designs. All rights reserved.
           </p>
         </div>
       </div>

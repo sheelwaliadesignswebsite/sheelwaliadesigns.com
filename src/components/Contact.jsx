@@ -23,7 +23,7 @@ export default function Contact() {
 
     try {
       const res = await fetch(
-        "https://formsubmit.co/ajax/shekharwork80@gmail.com",
+        "https://formsubmit.co/ajax/atelier@sheelwaliadesigns.com",
         {
           method: "POST",
           body: formData,
@@ -47,18 +47,20 @@ export default function Contact() {
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-center mb-5 text-peach">
-        Connect on
+      <h2 className="font-serif text-3xl text-center mb-3 text-charcoal">
+        Sheelwalia Designs
       </h2>
+      <p className="text-center text-[var(--muted)] mb-5">
+        Let’s create a space that feels luxurious, warm, and uniquely yours.
+      </p>
 
-      {/* Social Icons */}
       <div className="flex justify-center gap-6 mb-2" aria-label="Social links">
         <a
-          href="https://www.instagram.com/shhekharr"
+          href="https://www.instagram.com/sheelwalia_designs?igsi=ZXFoZWd3cTB0ZzU5"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          className="p-3 rounded-full bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
+          className="p-3 bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
         >
           <BiLogoInstagram
             className="w-5 h-5 text-gray-700"
@@ -66,18 +68,18 @@ export default function Contact() {
           />
         </a>
         <a
-          href="mailto:shekharwork80@gmail.com"
+          href="mailto:atelier@sheelwaliadesigns.com"
           aria-label="Email"
-          className="p-3 rounded-full bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
+          className="p-3 bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
         >
           <BiMailSend className="w-5 h-5 text-gray-700" aria-hidden="true" />
         </a>
         <a
-          href="https://wa.me/919058968080"
+          href="https://wa.me/918126819191"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
-          className="p-3 rounded-full bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
+          className="p-3 bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
         >
           <BiLogoWhatsapp
             className="w-5 h-5 text-gray-700"
@@ -85,9 +87,9 @@ export default function Contact() {
           />
         </a>
         <a
-          href="tel:+919058968080"
+          href="tel:+918126819191"
           aria-label="Call"
-          className="p-3 rounded-full bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
+          className="p-3 bg-[var(--skin)] hover:bg-[var(--peach)] transition-colors"
         >
           <BiPhoneCall className="w-5 h-5 text-gray-700" aria-hidden="true" />
         </a>
@@ -95,12 +97,14 @@ export default function Contact() {
 
       <div className="border-t border-[var(--coffee)] my-6" />
 
-      <h2 className="text-3xl font-bold text-center mb-4 text-peach">
-        Reach Out
+      <h2 className="font-serif text-3xl text-center mb-4 text-charcoal">
+        Let’s Design Your Dream Space
       </h2>
 
       {!submitted ? (
         <form
+          action="https://formsubmit.co/ajax/atelier@sheelwaliadesigns.com"
+          method="POST"
           onSubmit={handleSubmit}
           className="space-y-6"
           aria-label="Contact form"
@@ -112,37 +116,50 @@ export default function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder="Name"
               required
-              aria-label="Full Name"
-              className="w-full p-4 bg-[var(--skin)] text-gray-800 rounded-lg border-0 focus:bg-white focus:ring-2 focus:ring-[var(--peach)] focus:outline-none transition-all"
+              aria-label="Name"
+              className="w-full p-4 bg-[var(--skin)] text-charcoal border border-transparent focus:bg-white focus:border-[var(--peach)] focus:outline-none transition-all"
             />
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder="Email"
               required
-              aria-label="Email Address"
-              className="w-full p-4 bg-[var(--skin)] text-gray-800 rounded-lg border-0 focus:bg-white focus:ring-2 focus:ring-[var(--peach)] focus:outline-none transition-all"
+              aria-label="Email"
+              className="w-full p-4 bg-[var(--skin)] text-charcoal border border-transparent focus:bg-white focus:border-[var(--peach)] focus:outline-none transition-all"
             />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              aria-label="Phone"
+              className="w-full p-4 bg-[var(--skin)] text-charcoal border border-transparent focus:bg-white focus:border-[var(--peach)] focus:outline-none transition-all"
+            />
+            <input
+              type="text"
+              name="project_type"
+              placeholder="Project Type"
+              aria-label="Project Type"
+              className="w-full p-4 bg-[var(--skin)] text-charcoal border border-transparent focus:bg-white focus:border-[var(--peach)] focus:outline-none transition-all"
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Message"
+              required
+              aria-label="Message"
+              className="w-full p-4 bg-[var(--skin)] text-charcoal border border-transparent focus:bg-white focus:border-[var(--peach)] focus:outline-none transition-all sm:col-span-2"
+            ></textarea>
           </div>
-
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Your Message"
-            required
-            aria-label="Message"
-            className="w-full p-4 bg-[var(--skin)] text-gray-800 rounded-lg border-0 focus:bg-white focus:ring-2 focus:ring-[var(--peach)] focus:outline-none transition-all"
-          ></textarea>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-peach text-white rounded-md text-lg tracking-wide hover:bg-coffee transition disabled:opacity-50"
+            className="w-full py-3 bg-peach text-white text-sm uppercase tracking-[0.2em] hover:bg-coffee transition disabled:opacity-50"
             aria-label="Submit contact form"
           >
-            {loading ? "Sending..." : "Submit"}
+            {loading ? "Sending..." : "Let’s Design Your Dream Space"}
           </button>
 
           {error && (

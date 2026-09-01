@@ -38,19 +38,19 @@ export default function ContactPopup({ onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[99] bg-black/50 flex items-center justify-center px-4"
+      className="fixed inset-0 z-[99] bg-[var(--charcoal)]/75 backdrop-blur-sm flex items-center justify-center px-4 py-6"
       role="dialog"
       aria-modal="true"
       aria-label="Contact popup"
     >
       <div
         ref={popupRef}
-        className="bg-white rounded-lg max-w-xl w-full p-6 relative shadow-xl animate-fadeIn"
+        className="bg-[var(--cream)] max-w-xl w-full p-6 md:p-8 relative shadow-2xl animate-fadeIn max-h-[90vh] overflow-y-auto"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
+          className="absolute top-3 right-3 text-[var(--muted)] hover:text-[var(--charcoal)] text-2xl"
           aria-label="Close contact popup"
         >
           <FiX className="w-6 h-6" />

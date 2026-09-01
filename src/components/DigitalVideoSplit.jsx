@@ -12,27 +12,25 @@ export default function DigitalVideoSplit() {
 
   const items = [
     {
-      title: "DIGITALS",
-      image: "/images/april18030.jpg",
-      onClick: () => scrollToSection("digitals"),
+      title: "View Projects",
+      subtitle: "Explore our signature interiors",
+      image: "/images/IMG_8689.JPG",
+      onClick: () => scrollToSection("projects"),
     },
     {
-      title: "VIDEOS",
-      image: "/images/april17657.jpg",
-      onClick: () =>
-        window.open(
-          "https://wa.me/919058968080?text=Send%20your%20videos",
-          "_blank"
-        ),
+      title: "Contact Us",
+      subtitle: "Let’s discuss your dream space",
+      image: "/images/IMG_9899.JPG",
+      onClick: () => scrollToSection("about"),
     },
   ];
 
   return (
     <section
-      className="max-w-6xl mx-auto mt-16 px-4"
-      aria-label="Digital and Video Navigation Section"
+      className="max-w-6xl mx-auto mt-16 px-6 md:px-10"
+      aria-label="Interior design navigation section"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {items.map((item, index) => (
           <div
             key={index}
@@ -42,7 +40,7 @@ export default function DigitalVideoSplit() {
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") item.onClick();
             }}
-            className="relative group overflow-hidden rounded-2xl cursor-pointer h-[400px] md:h-[500px] focus:outline-none focus-visible:ring-0"
+            className="relative group overflow-hidden cursor-pointer h-[400px] md:h-[500px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--peach)]"
             aria-label={`Navigate to ${item.title}`}
           >
             <Image
@@ -54,9 +52,13 @@ export default function DigitalVideoSplit() {
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-300" />
-            <h3 className="absolute inset-0 flex items-center justify-center text-white text-xl md:text-3xl font-semibold tracking-wide text-center">
-              {item.title}
-            </h3>
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
+              <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--skin)] mb-3">Sheelwalia Designs</p>
+              <h3 className="font-serif text-2xl md:text-4xl tracking-tight">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm md:text-base text-white/80">{item.subtitle}</p>
+            </div>
           </div>
         ))}
       </div>

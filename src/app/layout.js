@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 // Font setup
@@ -14,26 +14,34 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://sheelwaliadesigns.com"
   ),
-  title: "Shekhar Rao | Portfolio",
+  title: "Sheelwalia Designs | Luxury Interior Design",
   description:
-    "Discover the professional portfolio of Shekhar Rao — showcasing modeling, videos, and collaborations.",
-  authors: [{ name: "Shekhar Rao" }],
+    "Sheelwalia Designs creates timeless residential and commercial interiors with elegance, comfort, and refined craftsmanship.",
+  authors: [{ name: "Sheelwalia Designs" }],
   openGraph: {
-    title: "Shekhar Rao | Portfolio",
+    title: "Sheelwalia Designs | Luxury Interior Design",
     description:
-      "Discover the professional portfolio of Shekhar Rao — showcasing modeling, videos, and collaborations.",
-    url: "https://shekharrao.vercel.app",
+      "Sheelwalia Designs creates timeless residential and commercial interiors with elegance, comfort, and refined craftsmanship.",
+    url: "https://sheelwaliadesigns.com",
     type: "website",
     images: [
       {
-        url: "https://shekharrao.vercel.app/images/april18030.jpg",
+        url: "https://sheelwaliadesigns.com/images/heros.PNG",
         width: 1200,
         height: 630,
-        alt: "Shekhar Rao promotional image",
+        alt: "Sheelwalia Designs interior design showcase",
       },
     ],
   },
@@ -58,7 +66,7 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#faf7f3",
+  themeColor: "#f8f3eb",
 };
 
 export default function RootLayout({ children }) {
@@ -89,41 +97,32 @@ export default function RootLayout({ children }) {
           href="/images/icons/favicon-16x16.png"
         />
 
-        {/* --- Social Media Meta Preview --- */}
         <meta
           name="description"
-          content="Discover the professional portfolio of Shekhar Rao — showcasing modeling, videos, and collaborations."
+          content="Sheelwalia Designs creates timeless residential and commercial interiors with elegance, comfort, and refined craftsmanship."
         />
 
-        {/* Facebook / Open Graph */}
-        <meta property="og:url" content="https://shekharrao.vercel.app" />
+        <meta property="og:url" content="https://sheelwaliadesigns.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Shekhar Rao | Portfolio" />
+        <meta property="og:title" content="Sheelwalia Designs | Luxury Interior Design" />
         <meta
           property="og:description"
-          content="Discover the professional portfolio of Shekhar Rao — showcasing modeling, videos, and collaborations."
+          content="Sheelwalia Designs creates timeless residential and commercial interiors with elegance, comfort, and refined craftsmanship."
         />
-        <meta
-          property="og:image"
-          content="https://shekharrao.vercel.app/images/april18030.jpg"
-        />
+        <meta property="og:image" content="https://sheelwaliadesigns.com/images/heros.PNG" />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="shekharrao.vercel.app" />
-        <meta property="twitter:url" content="https://shekharrao.vercel.app" />
-        <meta name="twitter:title" content="Shekhar Rao | Portfolio" />
+        <meta property="twitter:domain" content="sheelwaliadesigns.com" />
+        <meta property="twitter:url" content="https://sheelwaliadesigns.com" />
+        <meta name="twitter:title" content="Sheelwalia Designs | Luxury Interior Design" />
         <meta
           name="twitter:description"
-          content="Discover the professional portfolio of Shekhar Rao — showcasing modeling, videos, and collaborations."
+          content="Sheelwalia Designs creates timeless residential and commercial interiors with elegance, comfort, and refined craftsmanship."
         />
-        <meta
-          name="twitter:image"
-          content="https://shekharrao.vercel.app/images/april18030.jpg"
-        />
+        <meta name="twitter:image" content="https://sheelwaliadesigns.com/images/heros.PNG" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-cream`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased bg-cream`}
       >
         {children}
       </body>

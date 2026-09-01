@@ -1,31 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import ContactPopup from "@/components/ContactPopup";
 
 export default function HeroSection() {
+  const router = useRouter();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [currentTab, setCurrentTab] = useState("Digitals");
+  const [currentTab, setCurrentTab] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
 
-  const tabs = ["Digitals", "Video", "Instagram", "Contact"];
-
-  const measurements = [
-    { label: "HEIGHT", value: "180 CM" },
-    { label: "CHEST", value: "38" },
-    { label: "WAIST", value: "30" },
-    { label: "HIPS", value: "37" },
-    { label: "SHOE", value: "UK 09" },
-    { label: "EYES", value: "BLACK" },
-    { label: "HAIR", value: "BLACK" },
-  ];
+  const tabs = ["Home", "About", "Services", "Video", "Contact"];
 
   useEffect(() => {
-    const video = document.getElementById("background-video");
-    if (video) {
-      video.play().catch(() => {});
-    }
     setTimeout(() => setIsLoaded(true), 500);
   }, []);
 
@@ -40,17 +28,14 @@ export default function HeroSection() {
     setCurrentTab(tab);
     setMenuOpen(false);
 
-    if (tab === "Digitals") {
-      document
-        .getElementById("digitals")
-        ?.scrollIntoView({ behavior: "smooth" });
+    if (tab === "Home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (tab === "About") {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    } else if (tab === "Services") {
+      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
     } else if (tab === "Video") {
-      window.open(
-        "https://wa.me/919058968080?text=Send%20your%20videos",
-        "_blank"
-      );
-    } else if (tab === "Instagram") {
-      window.open(process.env.NEXT_PUBLIC_INSTAGRAM_LINK, "_blank");
+      router.push("/videos");
     } else if (tab === "Contact") {
       setContactOpen(true);
     }
@@ -58,22 +43,16 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden z-0">
-      {/* Background Video */}
-      <video
-        id="background-video"
+      {/* Background Image */}
+      <img
+        src="/images/heros.PNG"
+        alt="Interior design project"
         className="absolute inset-0 w-full h-full object-cover z-0 scale-105"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/videos/runway.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      />
 
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/40 z-5"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-5"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
       {/* Menu Icon */}
       <button
@@ -167,46 +146,35 @@ export default function HeroSection() {
           }`}
         >
           <h1
-            className="text-4xl md:text-7xl font-serif font-light mb-2 tracking-wide"
+            className="text-4xl md:text-7xl font-light mb-2 tracking-wide"
             style={{ color: "var(--cream)" }}
           >
-            Shekhar
+            Sheel Walia Designs
           </h1>
-          <div className="flex items-center justify-center gap-4 mb-2">
+          <div className="flex items-center justify-center gap-4 mb-3">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/50" />
             <span className="text-lg md:text-xl font-light text-white/80 tracking-[0.3em]">
-              RAO
+              THAT FEEL LIKE HOME
             </span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/50" />
           </div>
-          <p className="text-sm md:text-base text-white/60 font-light tracking-widest">
-            DELHI
+          <p className="text-sm md:text-base text-white/70 font-light tracking-widest max-w-2xl mx-auto">
+            Sheelwalia Designs creates beautiful residential and commercial interiors that blend functionality, elegance, and your unique style.
           </p>
         </div>
 
-        {/* Measurements */}
-        <div
-          className={`mt-10 transition-all duration-1000 delay-300 ${
-            isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white/90">
-            {measurements.map((item, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-xs font-medium tracking-wider text-white/60 mb-1">
-                  {item.label}
-                </div>
-                <div className="text-sm font-light group-hover:text-white transition-colors duration-300">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <button
+            onClick={() => setContactOpen(true)}
+            className="px-6 py-3 rounded-full bg-[var(--peach)] text-sm uppercase tracking-[0.25em] text-white transition hover:bg-[var(--coffee)]"
+          >
+            Contact Us
+          </button>
         </div>
 
         {/* Tab Buttons */}
         <div
-          className={`mt-12 sm:mt-16 mb-8 sm:mb-20 transition-all duration-1000 delay-500 ${
+          className={`hidden sm:block mt-12 sm:mt-16 mb-8 sm:mb-20 transition-all duration-1000 delay-500 ${
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >

@@ -1,0 +1,184 @@
+<svg>
+  <filter id="noise">
+    <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0">
+      <animate attributeName="seed" values="1;2;3;4" dur="0.5s" calcMode="discrete" repeatCount="indefinite" />
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<div class="card">
+  <div class="img-wrapper">
+    <img src="https://images.unsplash.com/photo-1674946994010-f06f6e1f1608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM5Nzk3MTh8&ixlib=rb-4.1.0&q=80&w=400" alt="">
+  </div>
+  <div class="text">little moment</div>
+  <div class="deco">
+    <span class="magician">🧙</span>
+    <span class="magic">🪄</span>
+    <span class="sparkles">✨</span>
+    <span class="cake">🍰</span>
+    <span class="custard">🍮</span>
+    <span class="dotted-hearts">💛💛💛</span>
+    <span class="ribbon-heart">💝</span>
+    <span class="flowers">🌷🪻🌷🪻🌷</span>
+  </div>
+</div>
+
+<a href="https://wiggleframe.vercel.app/" target="_blank">Try Wiggle Frame</a>
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 48px 36px;
+  color: #222;
+  background-color: #ececec;
+
+  font-family: "Gochi Hand", cursive;
+  font-smoothing: antialiased;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
+
+.card {
+  flex-shrink: 0;
+
+  width: clamp(280px, 30vw, 360px);
+  aspect-ratio: 4/5;
+  padding: 24px;
+
+  rotate: -6deg;
+  background-color: #f9f7f5;
+  box-shadow: 2px 2px 12px #0003;
+}
+
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  position: relative;
+
+  // inner shadow
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 2px 2px 4px #0007, inset -1px -1px 4px #0003;
+  } 
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.2) brightness(0.9);
+  }
+}
+
+.text {
+  font-size: clamp(28px, 3vw, 36px);
+  text-align: end;
+  padding-top: 30px;
+}
+
+.deco {
+  position: absolute;
+  inset: 0;
+
+  font-family: "Noto Emoji", sans-serif;
+  font-size: clamp(60px, 6.5vw, 80px);
+
+  filter: url('#noise');
+
+
+  span {
+    position: absolute;
+  }
+
+  .magician {
+    top: 50%;
+    left: -15%;
+    font-size: 1.2em;
+    rotate: -10deg;
+    color: #f35436;
+  }
+  .magic {
+    top: -6%;
+    left: -6%;
+    font-size: 0.7em;
+    color: #3364e6;
+  }
+  .sparkles {
+    top: 10%;
+    left: 10%;
+    font-size: 1.2em;
+    color: #fff1a7;
+  }
+  .cake {
+    bottom: 1%;
+    left: 5%;
+    font-size: 0.7em;
+    color: gold;
+    rotate: -5deg;
+  }
+  .custard {
+    right: -7%;
+    bottom: -5%;
+    font-size: 0.8em;
+    color: sienna;
+    rotate: 0deg;
+  }
+  .dotted-hearts {
+    top: 25%;
+    left: 85%;
+    font-size: 0.7em;
+    color: #8576e4;
+    rotate: 10deg;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .ribbon-heart {
+    top: -5%;
+    right: -5%;
+    color: pink;
+    rotate: 15deg;
+  }
+
+  .flowers {
+    top: 77%;
+    left: 5%;
+    font-size: 0.32em;
+    letter-spacing: -12px;
+    color: #47af5c;
+    font-weight: bold;
+  }
+}
+
+a {
+  color: #3364e6;
+  opacity: 0.7;
+  font-size: 1.2em;
+  transition: all 0.2s;
+  
+  &:hover {
+    opacity: 1;
+  }
+}

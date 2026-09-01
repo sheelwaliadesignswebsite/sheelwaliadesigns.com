@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Portfolio Digitals */}
+      {/* Digitals */}
       <DigitalsSection />
 
       {/* Footer */}
@@ -26,10 +26,10 @@ export default function Home() {
       {/* Floating Let's Talk Button */}
       <button
         onClick={() => setShowContact(true)}
-        className="fixed bottom-6 right-6 z-50 bg-peach hover:bg-opacity-90 text-white font-semibold px-5 py-3 rounded-full shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-peach"
+        className="fixed bottom-6 right-6 z-50 bg-peach hover:bg-opacity-90 text-white text-sm uppercase tracking-[0.16em] px-5 py-3 shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-peach"
         aria-label="Open Contact Form"
       >
-        {`Let's talk`}
+        Contact Us
       </button>
 
       {/* Contact Modal */}
