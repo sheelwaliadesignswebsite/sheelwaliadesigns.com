@@ -1,14 +1,11 @@
 "use client";
-
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import DigitalsSection from "@/components/DigitalsSection";
 import Footer from "@/components/Footer";
 import ContactPopup from "@/components/ContactPopup";
-
 export default function Home() {
   const [showContact, setShowContact] = useState(false);
-
   return (
     <main
       role="main"
@@ -16,13 +13,10 @@ export default function Home() {
     >
       {/* Hero Section */}
       <HeroSection />
-
       {/* Digitals */}
       <DigitalsSection />
-
       {/* Footer */}
       <Footer />
-
       {/* Floating Let's Talk Button */}
       <button
         onClick={() => setShowContact(true)}
@@ -31,7 +25,6 @@ export default function Home() {
       >
         Contact Us
       </button>
-
       {/* Contact Modal */}
       {showContact && <ContactPopup onClose={() => setShowContact(false)} />}
     </main>
