@@ -9,8 +9,7 @@ export default function Home() {
   return (
     <main
       role="main"
-      className="bg-cream text-black relative overflow-x-hidden"
-    >
+      className="bg-cream text-black relative overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection />
       {/* Digitals */}
